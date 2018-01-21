@@ -6,9 +6,10 @@ class ShipsSet {
     for (let i = 0; i < 10; i++) {
       this.shipsPlacement[i] = new Array(10);
       for (let j = 0; j < 10; j++) {
-        this.shipsPlacement[i][j] = 0;
+        this.shipsPlacement[i][j] = null;
       }
     }
+    this.generateSeveralShips(20);
     console.log(this.shipsPlacement);
   }
   generateRandomShip() {
@@ -29,10 +30,10 @@ class ShipsSet {
     }
   }
   spaceIsAvailable(ship) {
-    return this.shipsPlacement[ship.x][ship.y] === 0;
+    return this.shipsPlacement[ship.x][ship.y] === null;
   }
   assignPlacement(ship) {
-    this.shipsPlacement[ship.x][ship.y] = 1;
+    this.shipsPlacement[ship.x][ship.y] = ship;
   }
 }
 
